@@ -45,9 +45,9 @@ reader = csv.reader( i )
 if args.skip_headers:
 	headers = reader.next()
 
-for line in reader:
+for num, line in enumerate(reader):
 	if args.label_index == -1:
-		label = "1"
+		label = str(num)
 	else:
 		label = line.pop( args.label_index )
 	
